@@ -1,37 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:padding="16dp"
     tools:context=".ActivityCombo">
+
+    <!-- Título o guía para el Spinner -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Selecciona una persona:"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:paddingBottom="8dp" />
+
+    <!-- Combo -->
     <Spinner
         android:id="@+id/spinner"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:padding="8dp" />
 
+    <!-- Campo Nombre -->
     <EditText
         android:id="@+id/cbnombre"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPersonName" />
+        android:hint="Nombre"
+        android:inputType="textPersonName"
+        android:padding="8dp" />
 
+    <!-- Campo Apellido -->
     <EditText
         android:id="@+id/cbapellido"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPersonName" />
+        android:hint="Apellido"
+        android:inputType="textPersonName"
+        android:padding="8dp" />
 
+    <!-- Campo Correo -->
     <EditText
         android:id="@+id/cbcorreo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPersonName" />
+        android:hint="Correo"
+        android:inputType="textEmailAddress"
+        android:padding="8dp" />
 
 </LinearLayout>

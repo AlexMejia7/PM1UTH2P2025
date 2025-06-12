@@ -13,7 +13,7 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class ActivityPrincipal extends AppCompatActivity {
 
-    Button btnadd,btnlista;
+    Button btnadd,btnlista,btcombo;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,6 +22,8 @@ public class ActivityPrincipal extends AppCompatActivity {
 
       btnadd = (Button) findViewById(R.id.btnadd);
       btnlista = (Button) findViewById(R.id.btnlist);
+      btcombo = (Button) findViewById(R.id.btncombo);
+
       btnadd.setOnClickListener(new View.OnClickListener() {
           @Override
           public void onClick(View v) {
@@ -37,5 +39,14 @@ public class ActivityPrincipal extends AppCompatActivity {
 
           }
       });
+        btcombo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), ActivityCombo.class);
+                startActivity(intent);
+
+            }
+        });
+
     }
 }
