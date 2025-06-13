@@ -3,6 +3,7 @@ package com.example.pm1uth2p2025;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -45,17 +46,28 @@ public class ActivityCombo extends AppCompatActivity {
         // Cambiado para usar dropdown layout adecuado
         ArrayAdapter<String> adp = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, Arreglolista);
         adp.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
         combopersonas.setAdapter(adp);
 
         // Evento cuando se selecciona una persona del combo
         combopersonas.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id)
+            {
+                try{
                 Personas personaSeleccionada = lista.get(position);
+
+
 
                 nombres.setText(personaSeleccionada.getNombres());
                 apellidos.setText(personaSeleccionada.getApellidos());
                 correo.setText(personaSeleccionada.getCorreo());
+            }
+               catch (Exception ex)
+               {
+                   Log.d("Error :",ex.toString());
+
+               }
             }
 
             @Override
